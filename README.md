@@ -1,4 +1,4 @@
-# 🐱 KittenTTS for ComfyUI
+# 🐱 Kitten-TTS for ComfyUI
 
 [![ComfyUI](https://img.shields.io/badge/ComfyUI-Custom%20Node-blue)](https://github.com/comfyanonymous/ComfyUI)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-green)](https://www.python.org/)
