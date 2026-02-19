@@ -59,10 +59,10 @@
       "widgets_values": [
         "KittenML/kitten-tts-mini-0.8 (80M)",
         "auto",
-        "Today I want to talk about the Kitten Text-to-Speech model inside ComfyUI. Kitten TTS is a lightweight, expressive voice model that turns written text into smooth, natural-sounding speech. What makes it powerful is how easily it integrates into ComfyUI’s node-based workflow. You simply connect your text input, adjust voice parameters like tone, speed, and generate high-quality audio in seconds.\n\nBecause it runs locally, you get privacy, control, and flexibility. Whether you’re creating voiceovers, testing dialogue, building AI assistants, or experimenting with sound design, Kitten TTS in ComfyUI makes the process fast, customizable, and creative. It’s simple to use, but incredibly powerful once you start exploring its full potential.",
-        "Leo",
+        "Today I want to talk about the Kitten Text-to-Speech model inside Comfy you eye.",
+        "Jasper",
         1.2,
-        true,
+        false,
         true,
         true,
         ""
@@ -116,10 +116,10 @@
   "extra": {
     "workflowRendererVersion": "LG",
     "ds": {
-      "scale": 1.6105100000000008,
+      "scale": 1.4641000000000008,
       "offset": [
-        -365.7542080546485,
-        1172.882374677117
+        -390.034455633874,
+        1128.8719978281026
       ]
     },
     "frontendVersion": "1.39.14",
