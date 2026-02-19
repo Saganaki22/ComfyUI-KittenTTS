@@ -87,7 +87,7 @@ Just add the **🐱 KittenTTS** node, type your text, select a voice, and connec
 
 ```
 ┌─────────────────────────┐
-│    🐱 KittenTTS         │
+│  🐱 KittenTTS           │ → Connect to audio nodes
 ├─────────────────────────┤
 │ model: mini-0.8 (80M)   │
 │ device: auto            │
@@ -97,8 +97,8 @@ Just add the **🐱 KittenTTS** node, type your text, select a voice, and connec
 │ keep_loaded: True       │
 │ output_stereo: False    │
 │ clean_text: True        │
+│ custom_model_path ...   │
 ├─────────────────────────┤
-│ audio ────────────────► │  → Connect to audio nodes
 └─────────────────────────┘
 ```
 
