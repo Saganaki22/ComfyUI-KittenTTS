@@ -1,0 +1,22 @@
+[project]
+name = "comfyui-kittentts"
+description = "ComfyUI custom node for KittenTTS - Ultra-lightweight text-to-speech (CUDA / CPU)"
+version = "1.0.0"
+license = { text = "LICENSE" }
+dependencies = [
+    "onnxruntime",
+    "phonemizer",
+    "espeakng_loader",
+    "misaki[en]",
+    "huggingface_hub",
+    "numpy",
+    "soundfile",
+]
+
+[project.urls]
+Repository = "https://github.com/Saganaki22/ComfyUI-KittenTTS"
+
+[tool.comfy]
+PublisherId = "saganaki22"
+DisplayName = "KittenTTS"
+Icon = "https://avatars.githubusercontent.com/u/84208527"
