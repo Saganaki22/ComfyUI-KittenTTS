@@ -1,0 +1,132 @@
+{
+  "id": "15f13fc8-0413-4872-a98d-d4db3e6b4479",
+  "revision": 0,
+  "last_node_id": 6,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 5,
+      "type": "MarkdownNote",
+      "pos": [
+        903.2236143393836,
+        -808.277366197175
+      ],
+      "size": [
+        306.40691457985326,
+        187.66144675978023
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "| Model | Params | Size | Quality | Link |\n|-------|--------|------|---------|------|\n| kitten-tts-mini | 80M | 80MB | Best | [Download](https://huggingface.co/KittenML/kitten-tts-mini-0.8) |\n| kitten-tts-micro | 40M | 41MB | Good | [Download](https://huggingface.co/KittenML/kitten-tts-micro-0.8) |\n| kitten-tts-nano | 15M | 56MB | Lightweight | [Download](https://huggingface.co/KittenML/kitten-tts-nano-0.8) |\n| kitten-tts-nano-int8 | 15M | 19MB | Smallest | [Download](https://huggingface.co/KittenML/kitten-tts-nano-0.8-int8) |"
+      ],
+      "color": "#c09430",
+      "bgcolor": "rgba(24,24,27,.9)"
+    },
+    {
+      "id": 4,
+      "type": "KittenTTS",
+      "pos": [
+        556.6965522023719,
+        -1008.6548162244286
+      ],
+      "size": [
+        334.24694149558024,
+        390.45442798581155
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "aux_id": "Saganaki22/ComfyUI-KittenTTS",
+        "ver": "unknown",
+        "Node name for S&R": "KittenTTS"
+      },
+      "widgets_values": [
+        "KittenML/kitten-tts-mini-0.8 (80M)",
+        "auto",
+        "Today I want to talk about the Kitten Text-to-Speech model inside ComfyUI. Kitten TTS is a lightweight, expressive voice model that turns written text into smooth, natural-sounding speech. What makes it powerful is how easily it integrates into ComfyUI’s node-based workflow. You simply connect your text input, adjust voice parameters like tone, speed, and generate high-quality audio in seconds.\n\nBecause it runs locally, you get privacy, control, and flexibility. Whether you’re creating voiceovers, testing dialogue, building AI assistants, or experimenting with sound design, Kitten TTS in ComfyUI makes the process fast, customizable, and creative. It’s simple to use, but incredibly powerful once you start exploring its full potential.",
+        "Leo",
+        1.2,
+        true,
+        true,
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 6,
+      "type": "SaveAudioMP3",
+      "pos": [
+        906.2041049065194,
+        -1004.4884853348526
+      ],
+      "size": [
+        301.7911414222049,
+        151.89557071110232
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 4
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.14.1",
+        "Node name for S&R": "SaveAudioMP3"
+      },
+      "widgets_values": [
+        "audio/ComfyUI",
+        "V0"
+      ]
+    }
+  ],
+  "links": [
+    [
+      4,
+      4,
+      0,
+      6,
+      0,
+      "AUDIO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "workflowRendererVersion": "LG",
+    "ds": {
+      "scale": 1.6105100000000008,
+      "offset": [
+        -365.7542080546485,
+        1172.882374677117
+      ]
+    },
+    "frontendVersion": "1.39.14",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

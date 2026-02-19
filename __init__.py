@@ -3,8 +3,8 @@
 This package provides ComfyUI integration for KittenTTS.
 """
 
-__version__ = "1.0.0"
-__author__ = "KittenML"
+__version__ = "1.0.1"
+__author__ = "Saganaki22"
 
 import logging
 import os

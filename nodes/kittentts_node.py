@@ -131,48 +131,24 @@ class KittenTTS:
             logger.error(f"Failed to load model: {e}")
             raise Exception(f"Failed to load KittenTTS model '{actual_model}': {str(e)}")
         
-        chunks = re.split(r'[.!?]+', text)
-        chunk_list = [c.strip() for c in chunks if c.strip()]
-        num_chunks = len(chunk_list)
-        total_steps = num_chunks + 1
-        
-        if COMFYUI_PROGRESS_AVAILABLE:
-            pbar = ProgressBar(total_steps)
-            gpu_str = "GPU" if is_gpu else "CPU"
-            logger.info(f"Generating: {num_chunks} chunk(s) on {gpu_str}")
+        gpu_str = "GPU" if is_gpu else "CPU"
+        logger.info(f"Generating on {gpu_str}")
         
         try:
-            audio_chunks = []
-            
-            if clean_text and hasattr(tts_model.model, 'preprocessor'):
-                processed_text = tts_model.model.preprocessor(text)
-            else:
-                processed_text = text
-            
-            processed_chunks = re.split(r'[.!?]+', processed_text)
-            processed_chunk_list = [c.strip() for c in processed_chunks if c.strip()]
-            
-            for i, chunk in enumerate(processed_chunk_list):
-                self._check_interrupt()
-                
-                if chunk:
-                    chunk_audio = tts_model.model.generate_single_chunk(chunk, voice, speed)
-                    audio_chunks.append(chunk_audio)
-                
-                if COMFYUI_PROGRESS_AVAILABLE:
-                    pbar.update_absolute(i + 1, total_steps)
-            
             import numpy as np
-            audio = np.concatenate(audio_chunks, axis=-1)
             
-            if COMFYUI_PROGRESS_AVAILABLE:
-                pbar.update_absolute(total_steps, total_steps)
+            audio = tts_model.model.generate(
+                text=text,
+                voice=voice,
+                speed=speed,
+                clean_text=clean_text,
+            )
             
             audio_output = format_audio_for_comfyui(audio, sample_rate=24000, stereo=output_stereo)
             
             duration_sec = len(audio) / 24000
             channels = "stereo" if output_stereo else "mono"
-            logger.info(f"Generated {duration_sec:.2f}s {channels} audio ({num_chunks} chunks)")
+            logger.info(f"Generated {duration_sec:.2f}s {channels} audio")
             
             if not keep_loaded:
                 unload_model()

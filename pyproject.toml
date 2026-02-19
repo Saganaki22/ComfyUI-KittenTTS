@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-kittentts"
 description = "ComfyUI custom node for KittenTTS - Ultra-lightweight text-to-speech (CUDA / CPU)"
-version = "1.0.0"
+version = "1.0.1"
 license = { text = "LICENSE" }
 dependencies = [
     "onnxruntime",
