@@ -165,7 +165,7 @@ if install_dependencies():
         from .nodes import KittenTTS
         
         NODE_CLASS_MAPPINGS["KittenTTS"] = KittenTTS
-        NODE_DISPLAY_NAME_MAPPINGS["KittenTTS"] = "🐱 KittenTTS"
+        NODE_DISPLAY_NAME_MAPPINGS["KittenTTS"] = "😻 Kitten-TTS"
         
         _, has_gpu = check_onnxruntime()
         gpu_status = "GPU" if has_gpu else "CPU"
