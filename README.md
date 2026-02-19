@@ -6,6 +6,9 @@
 
 A simple ComfyUI custom node for [KittenTTS](https://github.com/KittenML/KittenTTS) - an ultra-lightweight text-to-speech model. Works on **CUDA** and **CPU**.
 
+<img width="1496" height="1015" alt="Screenshot 2026-02-19 194339" src="https://github.com/user-attachments/assets/6af8a500-0a48-47da-adff-e020a5437e88" />
+
+
 ## Demo
 
 https://github.com/user-attachments/assets/d80120f2-c751-407e-a166-068dd1dd9e8d
