@@ -55,7 +55,10 @@ def install_dependencies():
     try:
         import onnxruntime
     except ImportError:
-        missing_packages.append("onnxruntime")
+        if has_cuda():
+            missing_packages.append("onnxruntime-gpu")
+        else:
+            missing_packages.append("onnxruntime")
     
     try:
         import phonemizer

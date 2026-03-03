@@ -42,16 +42,28 @@ git clone https://github.com/Saganaki22/ComfyUI-KittenTTS.git
 
 ### Dependencies
 
-The node auto-installs dependencies on first run. For manual install:
+The node auto-installs most dependencies on first run. The correct version of `onnxruntime` (CPU or GPU) is dynamically chosen based on whether your PyTorch environment supports CUDA.
 
-**For CPU:**
+If you need to install or fix it manually:
+
+**Standard Python environment:**
 ```bash
+# For CPU
 pip install onnxruntime
+
+# For CUDA GPU
+pip install onnxruntime-gpu
 ```
 
-**For CUDA GPU:**
+**For Windows portable ComfyUI, use the embedded Python:**
 ```bash
-pip install onnxruntime-gpu
+# From ComfyUI_windows_portable directory
+
+# For CPU
+.\python_embeded\python.exe -m pip install onnxruntime
+
+# For CUDA GPU
+.\python_embeded\python.exe -m pip install onnxruntime-gpu
 ```
 
 ## Models
@@ -123,6 +135,7 @@ You can create symlinks to this folder if you want to share models between Comfy
 - Use CPU device
 
 ### "onnxruntime not found"
+**Standard Python environment:**
 ```bash
 # For CPU
 pip install onnxruntime
@@ -131,10 +144,28 @@ pip install onnxruntime
 pip install onnxruntime-gpu
 ```
 
+**For Windows portable ComfyUI, use the embedded Python:**
+```bash
+# From ComfyUI_windows_portable directory
+
+# For CPU
+.\python_embeded\python.exe -m pip install onnxruntime
+
+# For CUDA
+.\python_embeded\python.exe -m pip install onnxruntime-gpu
+```
+
 ### "No module named 'kittentts'"
 The bundled wheel should auto-install. If not:
+
+**Standard Python environment:**
 ```bash
 pip install https://github.com/KittenML/KittenTTS/releases/download/0.8/kittentts-0.8.0-py3-none-any.whl
+```
+
+**For Windows portable ComfyUI:**
+```bash
+.\python_embeded\python.exe -m pip install https://github.com/KittenML/KittenTTS/releases/download/0.8/kittentts-0.8.0-py3-none-any.whl
 ```
 
 ## Links

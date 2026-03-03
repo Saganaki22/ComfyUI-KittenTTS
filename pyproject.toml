@@ -4,7 +4,6 @@ description = "ComfyUI custom node for KittenTTS - Ultra-lightweight text-to-spe
 version = "1.0.3"
 license = { text = "LICENSE" }
 dependencies = [
-    "onnxruntime",
     "phonemizer",
     "espeakng_loader",
     "misaki[en]",
