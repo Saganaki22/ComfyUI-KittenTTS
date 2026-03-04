@@ -1,10 +1,9 @@
 [project]
 name = "comfyui-kitten-tts"
 description = "ComfyUI custom node for KittenTTS - Ultra-lightweight text-to-speech (CUDA / CPU)"
-version = "1.0.2"
+version = "1.0.3"
 license = { text = "LICENSE" }
 dependencies = [
-    "onnxruntime",
     "phonemizer",
     "espeakng_loader",
     "misaki[en]",

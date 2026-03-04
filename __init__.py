@@ -3,7 +3,7 @@
 This package provides ComfyUI integration for KittenTTS.
 """
 
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 __author__ = "Saganaki22"
 
 import logging
@@ -55,7 +55,10 @@ def install_dependencies():
     try:
         import onnxruntime
     except ImportError:
-        missing_packages.append("onnxruntime")
+        if has_cuda():
+            missing_packages.append("onnxruntime-gpu")
+        else:
+            missing_packages.append("onnxruntime")
     
     try:
         import phonemizer
@@ -104,16 +107,24 @@ def install_dependencies():
             logger.error(f"Error installing dependencies: {e}")
             return False
     
+    import importlib.metadata
+    needs_install = False
     try:
-        import kittentts
-    except ImportError:
+        version = importlib.metadata.version("kittentts")
+        if version != "0.8.0":
+            logger.warning(f"Found incompatible kittentts {version}, forcing update from bundled wheel...")
+            needs_install = True
+    except importlib.metadata.PackageNotFoundError:
+        needs_install = True
+
+    if needs_install:
         whl_dir = current_dir / "whl"
         wheel_file = whl_dir / "kittentts-0.8.0-py3-none-any.whl"
         if wheel_file.exists():
             logger.info("Installing bundled KittenTTS wheel...")
             try:
                 result = subprocess.run(
-                    [sys.executable, "-m", "pip", "install", str(wheel_file)],
+                    [sys.executable, "-m", "pip", "install", "--force-reinstall", "--no-deps", str(wheel_file)],
                     capture_output=True,
                     text=True,
                     check=False
